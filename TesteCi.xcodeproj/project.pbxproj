@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		921DB6E12CD1E860005C579F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 921DB6E02CD1E860005C579F /* FirebaseAnalytics */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		920984B52CCAC2B100FE759E /* TesteCi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteCi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921DB6E12CD1E860005C579F /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = TesteCi;
 			packageProductDependencies = (
+				921DB6E02CD1E860005C579F /* FirebaseAnalytics */,
 			);
 			productName = TesteCi;
 			productReference = 920984B52CCAC2B100FE759E /* TesteCi.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 920984AC2CCAC2B100FE759E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				921DB6DF2CD1E860005C579F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 920984B62CCAC2B100FE759E /* Products */;
 			projectDirPath = "";
@@ -343,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		921DB6DF2CD1E860005C579F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		921DB6E02CD1E860005C579F /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 921DB6DF2CD1E860005C579F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 920984AD2CCAC2B100FE759E /* Project object */;
 }
