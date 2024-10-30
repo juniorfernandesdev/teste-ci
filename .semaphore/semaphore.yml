@@ -1,11 +1,11 @@
 version: v1.0
-name: Semaphore iOS Swift example with Fastlane
+name: Semaphore iOS
 agent:
   machine:
-    type: a1-standard-4
-    os_image: macos-xcode15
+    type: a2-standard-4
+    os_image: macos-xcode16
 blocks:
-  - name: Fastlane Tests
+  - name: Build Producao
     task:
       env_vars:
         - name: LANG
@@ -14,26 +14,61 @@ blocks:
         commands:
           - checkout
           - cache restore
+          - chmod 0600 ~/.ssh/id_semaphore_ios_ds
+          - ssh-add ~/.ssh/id_semaphore_ios_ds
+          - gem install bundler -v 2.4.22
           - bundle install --path vendor/bundle
+          - sudo gem install cocoapods
+          - pod install
           - cache store
       jobs:
-        - name: bundle exec fastlane test
+        - name: Build
           commands:
-            - bundle exec xcversion select 12.0.1
-            - bundle exec fastlane test
-  - name: Fastlane Build
+            - xcversion select 16.0
+            - bundle exec fastlane build_pre_producao
+    dependencies: []
+    run:
+      when: branch = 'develop'
+  - name: Build Debug
     task:
       env_vars:
         - name: LANG
           value: en_US.UTF-8
+      secrets:
+        - name: private-repo
       prologue:
         commands:
           - checkout
           - cache restore
+          - chmod 0600 ~/.ssh/id_semaphore_ios_ds
+          - ssh-add ~/.ssh/id_semaphore_ios_ds
+          - gem install bundler -v 2.4.22
           - bundle install --path vendor/bundle
+          - sudo gem install cocoapods
+          - pod install
           - cache store
       jobs:
-        - name: bundle exec fastlane build
+        - name: Build
           commands:
-            - bundle exec xcversion select 12.0.1
-            - bundle exec fastlane build
+            - xcversion select 16.0
+            - bundle exec fastlane build_pre_debug
+    dependencies: []
+    run:
+      when: branch =~ 'fix/pipe-2024'
+promotions:
+  - name: Deploy - TestFlight
+    pipeline_file: testFlight-deploy.yml
+    auto_promote:
+      when: branch = 'master'
+  - name: Deploy - Homolog - Firebase
+    pipeline_file: appDistribution-debug-deploy.yml
+    auto_promote:
+      when: branch =~ 'fix/pipe-2024'
+  - name: Deploy Dsym File
+    pipeline_file: testFlight-deploy-dsym.yml
+  - name: Deploy - Homolog - TestFlight
+    pipeline_file: appDistribution-prod-debug-deploy.yml
+  - name: Update - Certificate - Homolog
+    pipeline_file: update-cert-homolog.yml
+  - name: Update - Certificate - Production
+    pipeline_file: update-cert-prod.yml
