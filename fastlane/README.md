@@ -1,51 +1,39 @@
 fastlane documentation
-----
-
+================
 # Installation
 
 Make sure you have the latest version of the Xcode command line tools installed:
 
-```sh
+```
 xcode-select --install
 ```
 
-For _fastlane_ installation instructions, see [Installing _fastlane_](https://docs.fastlane.tools/#installing-fastlane)
+Install _fastlane_ using
+```
+[sudo] gem install fastlane -NV
+```
+or alternatively using `brew install fastlane`
 
 # Available Actions
-
-### setup_certificates
-
-```sh
-[bundle exec] fastlane setup_certificates
-```
-
-
-
-### create_and_upload_certificates
-
-```sh
-[bundle exec] fastlane create_and_upload_certificates
-```
-
-
-
-----
-
-
 ## iOS
-
-### ios custom_lane
-
-```sh
-[bundle exec] fastlane ios custom_lane
+### ios build
+```
+fastlane ios build
 ```
 
-Description of what the lane does
+### ios test
+```
+fastlane ios test
+```
+
+### ios screenshots
+```
+fastlane ios screenshots
+```
+
 
 ----
 
-This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
-
-More information about _fastlane_ can be found on [fastlane.tools](https://fastlane.tools).
-
-The documentation of _fastlane_ can be found on [docs.fastlane.tools](https://docs.fastlane.tools).
+This README.md is auto-generated and will be re-generated every time [fastlane](https://fastlane.tools) is run.
+More information about fastlane can be found on [fastlane.tools](https://fastlane.tools).
+The documentation of fastlane can be found on [docs.fastlane.tools](https://docs.fastlane.tools).
