@@ -19,8 +19,6 @@ blocks:
         commands:
           - checkout
           - cache restore
-          - chmod 0600 ~/.ssh/id_semaphore_admin
-          - ssh-add ~/.ssh/id_semaphore_admin
           - gem install bundler -v 2.4.22
           - bundle install --path vendor/bundle
           - sudo gem install cocoapods
