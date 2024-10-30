@@ -14,8 +14,7 @@ blocks:
         commands:
           - checkout
           - cache restore
-          - gem install bundler -v '2.1.4'
-          - bundle install --path vendor/bundle
+          - gem install bundler -v '2.4.22' && bundle install
           - cache store
       jobs:
         - name: Test
@@ -33,11 +32,10 @@ blocks:
       prologue:
         commands:
           - chmod 0600 ~/.ssh/*
-          - ssh-add ~/.ssh/match-repository-private-key
+          - if [ -f ~/.ssh/match-repository-private-key ]; then ssh-add ~/.ssh/match-repository-private-key; fi
           - checkout
           - cache restore
-          - gem install bundler -v '2.1.4'
-          - bundle install --path vendor/bundle
+          - gem install bundler -v '2.4.22' && bundle install
           - cache store
       jobs:
         - name: Build
@@ -45,6 +43,7 @@ blocks:
             - bundle exec xcversion select 12.2
             - bundle exec fastlane build
             - artifact push job build/TallestTowers.ipa
+
   - name: Take screenshots
     task:
       env_vars:
@@ -54,8 +53,7 @@ blocks:
         commands:
           - checkout
           - cache restore
-          - gem install bundler -v '2.1.4'
-          - bundle install --path vendor/bundle
+          - gem install bundler -v '2.4.22' && bundle install
           - cache store
       jobs:
         - name: Screenshots
