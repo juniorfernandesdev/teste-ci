@@ -1,0 +1,22 @@
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/json-2.7.4/ext/json/ext/parser
+/Users/juniorfernandes/.rbenv/versions/3.2.0/bin/ruby extconf.rb
+checking for rb_enc_raise() in ruby.h... yes
+checking for rb_enc_interned_str() in ruby.h... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/json-2.7.4/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-usxrqd sitelibdir\=./.gem.20241030-50104-usxrqd clean
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/json-2.7.4/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-usxrqd sitelibdir\=./.gem.20241030-50104-usxrqd
+compiling parser.c
+linking shared-object json/ext/parser.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/json-2.7.4/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-usxrqd sitelibdir\=./.gem.20241030-50104-usxrqd install
+/usr/bin/install -c -m 0755 parser.bundle ./.gem.20241030-50104-usxrqd/json/ext
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/json-2.7.4/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-usxrqd sitelibdir\=./.gem.20241030-50104-usxrqd clean

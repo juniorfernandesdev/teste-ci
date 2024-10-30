@@ -1,0 +1,22 @@
+# Changelog
+
+
+## 0.2.3
+
+Fix release_on_gc for values where the high bit is set
+
+## 0.2.2
+
+fix finalizer exception (again)
+
+## 0.2.1
+
+fix finalizer exception
+
+## 0.2.0 - 2012-12-06
+Add support for ruby 1.8.7 [tmaher]
+
+
+## 0.1.4 - 2012-10-16
+
+Initial version

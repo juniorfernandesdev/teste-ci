@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='CITesteShopperUITests.xctest' tests='6' failures='2'>
+  <testsuite name='CITesteShopperTests.TowerInstanceTests' tests='3' failures='0'>
+    <testcase classname='CITesteShopperTests.TowerInstanceTests' name='testCityAndCountryShouldConcatenateCityAndCountry' time='0.002'/>
+    <testcase classname='CITesteShopperTests.TowerInstanceTests' name='testFormattedHeightIncludesUnits' time='0.000'/>
+    <testcase classname='CITesteShopperTests.TowerInstanceTests' name='testLocationShouldBeCreatedFromLatitudeAndLongitudeProperties' time='0.001'/>
+  </testsuite>
+  <testsuite name='CITesteShopperTests.TowerStaticTests' tests='1' failures='0'>
+    <testcase classname='CITesteShopperTests.TowerStaticTests' name='testCITesteShopperShouldNotBeEmpty' time='0.000'/>
+  </testsuite>
+  <testsuite name='CITesteShopperUITests.CITesteShopperUITests' tests='2' failures='2'>
+    <testcase classname='CITesteShopperUITests.CITesteShopperUITests' name='testNavigation'>
+      <failure message='Failed to tap Button (Elements matching predicate &apos;label BEGINSWITH &quot;Burj Khalifa&quot;&apos;): No matches found for Descendants matching type Table from input {('>CITesteShopperUITests/CITesteShopperUITests.swift:13</failure>
+    </testcase>
+    <testcase classname='CITesteShopperUITests.CITesteShopperUITests' name='testTowerDetailView'>
+      <failure message='Failed to tap Button (Elements matching predicate &apos;label BEGINSWITH &quot;China Zun&quot;&apos;): No matches found for Descendants matching type Table from input {('>CITesteShopperUITests/CITesteShopperUITests.swift:23</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -42,7 +42,7 @@ blocks:
           commands:
             - bundle exec xcversion select 12.2
             - bundle exec fastlane build
-            - artifact push job build/TallestTowers.ipa
+            - artifact push job build/CITesteShopper.ipa
 
   - name: Take screenshots
     task:

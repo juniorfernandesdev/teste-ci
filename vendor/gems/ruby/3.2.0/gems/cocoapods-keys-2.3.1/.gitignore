@@ -1,0 +1,8 @@
+.DS_Store
+pkg
+.idea/
+spec/fixtures/dump-key
+vendor
+install
+.bundle
+*.gem

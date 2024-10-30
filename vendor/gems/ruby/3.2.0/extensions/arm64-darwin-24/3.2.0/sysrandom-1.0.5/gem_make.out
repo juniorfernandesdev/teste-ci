@@ -1,0 +1,20 @@
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/sysrandom-1.0.5/ext/sysrandom
+/Users/juniorfernandes/.rbenv/versions/3.2.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/sysrandom-1.0.5/ext/sysrandom
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-1xbrr sitelibdir\=./.gem.20241030-50104-1xbrr clean
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/sysrandom-1.0.5/ext/sysrandom
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-1xbrr sitelibdir\=./.gem.20241030-50104-1xbrr
+compiling randombytes_sysrandom.c
+compiling sysrandom_ext.c
+linking shared-object sysrandom_ext.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/sysrandom-1.0.5/ext/sysrandom
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-1xbrr sitelibdir\=./.gem.20241030-50104-1xbrr install
+/usr/bin/install -c -m 0755 sysrandom_ext.bundle ./.gem.20241030-50104-1xbrr
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/sysrandom-1.0.5/ext/sysrandom
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-1xbrr sitelibdir\=./.gem.20241030-50104-1xbrr clean

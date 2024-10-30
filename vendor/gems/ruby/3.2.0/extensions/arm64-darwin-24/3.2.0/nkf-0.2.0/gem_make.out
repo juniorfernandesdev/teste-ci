@@ -1,0 +1,19 @@
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/nkf-0.2.0/ext/nkf
+/Users/juniorfernandes/.rbenv/versions/3.2.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-pfrrjm sitelibdir\=./.gem.20241030-50104-pfrrjm clean
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-pfrrjm sitelibdir\=./.gem.20241030-50104-pfrrjm
+compiling nkf.c
+linking shared-object nkf.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-pfrrjm sitelibdir\=./.gem.20241030-50104-pfrrjm install
+/usr/bin/install -c -m 0755 nkf.bundle ./.gem.20241030-50104-pfrrjm
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/3.2.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241030-50104-pfrrjm sitelibdir\=./.gem.20241030-50104-pfrrjm clean

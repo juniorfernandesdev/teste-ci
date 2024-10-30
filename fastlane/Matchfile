@@ -4,9 +4,10 @@
 # The docs are available on https://docs.fastlane.tools/actions/match
 
 storage_mode('git')
-git_url('ENTER THE URL FOR AN EMPTY PRIVATE GIT REPOSITORY HERE')
-
-username('ENTER YOUR APP STORE EMAIL/USERNAME HERE')
+git_url('git@github.com:juniorfernandesdev/certificados.git')
+username('juniorbass8@gmail.com')
 
 type('adhoc')
-app_identifier('com.semaphoreci.TallestTowers')
+app_identifier('com.teste-ci.shopper')
+readonly(true)
+git_branch('main')

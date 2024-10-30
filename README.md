@@ -4,19 +4,19 @@ This example iOS application includes a fully configured CI pipeline demonstrati
 
 ## Run the example app and tests locally
 
-To run the example application, fork this repository and clone it locally. Open `TallestTowers.xcodeproj`, select an installed simulator and choose "Run" from the "Product" menu or press ⌘R.
+To run the example application, fork this repository and clone it locally. Open `CITesteShopper.xcodeproj`, select an installed simulator and choose "Run" from the "Product" menu or press ⌘R.
 
 This project also includes both unit, and UI tests. To run all tests locally, choose "Test" from the "Product" menu or press ⌘U.
 
-![Example project running in the iOS Simulator](Images/TallestTowers.png)
+![Example project running in the iOS Simulator](Images/CITesteShopper.png)
 
 ## Set up code signing
 
 Before you run the example app on a real device or on Semaphore, you'll need to configure code signing.
 
-First, you'll will need to configure the Xcode project to use your development team. Open `TallestTowers.xcodeproj` and set the development team for each of the `TallestTowers`, `TallestTowersTests`, `TallestTowersUITests`, and `TallestTowersScreenshots` targets as follows:
+First, you'll will need to configure the Xcode project to use your development team. Open `CITesteShopper.xcodeproj` and set the development team for each of the `CITesteShopper`, `CITesteShopperTests`, `CITesteShopperUITests`, and `CITesteShopperScreenshots` targets as follows:
 
-1. Select the `TallestTowers` project in the Project navigator.
+1. Select the `CITesteShopper` project in the Project navigator.
 2. Switch to the "Signing & Capabilities" tab.
 3. Select each target in turn and select a valid development team in the "Signing" settings.
 
@@ -31,11 +31,11 @@ Then, generate ad hoc signing certificates and provisioning profiles. Quit Xcode
 bundle exec fastlane match adhoc
 ``` 
 
-Finally, open `TallestTowers.xcodeproj` with Xcode again and make the following changes:
+Finally, open `CITesteShopper.xcodeproj` with Xcode again and make the following changes:
 
-* Select the `TallestTowers` target in the project and switch to the "Signing and Capabilities" tab.
+* Select the `CITesteShopper` target in the project and switch to the "Signing and Capabilities" tab.
 * Uncheck the "Automatically manage signing" checkbox.
-* Select `match AdHoc com.semaphoreci.TallestTowers` from the "Provisioning Profile" drop-down.
+* Select `match AdHoc com.teste-ci.shopper` from the "Provisioning Profile" drop-down.
 
 ## Run the CI pipeline locally
 
@@ -54,7 +54,7 @@ bundle exec fastlane test
 bundle exec fastlane screenshots
 ```
 
-At this point, if everything is configured correctly you should have a `TallestTowers.ipa` file in the project root and a `screenshots` directory containing sample App Store screenshots.
+At this point, if everything is configured correctly you should have a `CITesteShopper.ipa` file in the project root and a `screenshots` directory containing sample App Store screenshots.
 
 ## Run the CI pipeline on Semaphore
 

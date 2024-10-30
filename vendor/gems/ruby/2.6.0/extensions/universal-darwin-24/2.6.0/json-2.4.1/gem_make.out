@@ -1,0 +1,13 @@
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/2.6.0/gems/json-2.4.1/ext/json
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20241030-45792-nwgwuy.rb extconf.rb
+creating Makefile
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/2.6.0/gems/json-2.4.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/2.6.0/gems/json-2.4.1/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/juniorfernandes/Documents/shopper/teste-ci/vendor/gems/ruby/2.6.0/gems/json-2.4.1/ext/json
+make "DESTDIR=" install
