@@ -18,7 +18,6 @@ blocks:
       prologue:
         commands:
           - checkout
-          - mv /Users/semaphore/api-key.json /Users/semaphore/shop_ios_app/fastlane/api-key.json
           - cache restore
           - chmod 0600 ~/.ssh/id_semaphore_admin
           - ssh-add ~/.ssh/id_semaphore_admin
