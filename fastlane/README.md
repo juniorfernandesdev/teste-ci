@@ -21,6 +21,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
+### create_and_upload_certificates
+
+```sh
+[bundle exec] fastlane create_and_upload_certificates
+```
+
+
+
 ----
 
 
