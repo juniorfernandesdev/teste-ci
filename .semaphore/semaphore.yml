@@ -1,11 +1,11 @@
 version: v1.0
-name: Semaphore iOS
+name: Tallest Towers
 agent:
   machine:
-    type: a2-standard-4
+    type: a1-standard-4
     os_image: macos-xcode16
 blocks:
-  - name: Build Producao
+  - name: Run tests
     task:
       env_vars:
         - name: LANG
@@ -14,40 +14,52 @@ blocks:
         commands:
           - checkout
           - cache restore
-          - gem install bundler -v 2.4.22
+          - gem install bundler -v '2.1.4'
           - bundle install --path vendor/bundle
-          - sudo gem install cocoapods
-          - pod install
           - cache store
       jobs:
-        - name: Build
+        - name: Deploy
           commands:
             - xcversion select 16.0
-            - bundle exec fastlane build_pre_producao
-    dependencies: []
-    run:
-      when: branch = 'develop'
-  - name: Build Debug
+            - bundle exec fastlane firebase_debug
+  - name: Build app
     task:
       env_vars:
         - name: LANG
           value: en_US.UTF-8
       secrets:
-        - name: private-repo
+        - name: match-secrets
       prologue:
         commands:
+          - chmod 0600 ~/.ssh/*
+          - ssh-add ~/.ssh/match-repository-private-key
           - checkout
           - cache restore
-          - gem install bundler -v 2.4.22
+          - gem install bundler -v '2.1.4'
           - bundle install --path vendor/bundle
-          - sudo gem install cocoapods
-          - pod install
           - cache store
       jobs:
         - name: Build
           commands:
-            - xcversion select 16.0
-            - bundle exec fastlane build_pre_debug
-    dependencies: []
-    run:
-      when: branch =~ 'develop'
+            - bundle exec xcversion select 12.2
+            - bundle exec fastlane build
+            - artifact push job build/TallestTowers.ipa
+  - name: Take screenshots
+    task:
+      env_vars:
+        - name: LANG
+          value: en_US.UTF-8
+      prologue:
+        commands:
+          - checkout
+          - cache restore
+          - gem install bundler -v '2.1.4'
+          - bundle install --path vendor/bundle
+          - cache store
+      jobs:
+        - name: Screenshots
+          commands:
+            - bundle exec xcversion select 16.0
+            - xcrun simctl list
+            - bundle exec fastlane screenshots
+            - artifact push job screenshots
