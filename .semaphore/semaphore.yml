@@ -2,7 +2,7 @@ version: v1.0
 name: Tallest Towers
 agent:
   machine:
-    type: a1-standard-4
+    type: a2-standard-4
     os_image: macos-xcode16
 blocks:
   - name: Run tests
@@ -41,7 +41,7 @@ blocks:
       jobs:
         - name: Build
           commands:
-            - bundle exec xcversion select 12.2
+            - bundle exec xcversion select 16.0
             - bundle exec fastlane build
             - artifact push job build/TallestTowers.ipa
   - name: Take screenshots
