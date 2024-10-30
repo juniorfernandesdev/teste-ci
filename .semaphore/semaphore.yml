@@ -19,7 +19,10 @@ blocks:
         commands:
           - checkout
           - cache restore
-          - gem install bundler -v 2.4.22
+          - brew install rbenv
+          - rbenv install 2.7.6
+          - rbenv global 2.7.6
+          - gem install bundler
           - bundle install --path vendor/bundle
           - sudo gem install cocoapods
           - pod install
