@@ -14,8 +14,6 @@ blocks:
         commands:
           - checkout
           - cache restore
-          - chmod 0600 ~/.ssh/id_semaphore_ios_ds
-          - ssh-add ~/.ssh/id_semaphore_ios_ds
           - gem install bundler -v 2.4.22
           - bundle install --path vendor/bundle
           - sudo gem install cocoapods
@@ -40,8 +38,6 @@ blocks:
         commands:
           - checkout
           - cache restore
-          - chmod 0600 ~/.ssh/id_semaphore_ios_ds
-          - ssh-add ~/.ssh/id_semaphore_ios_ds
           - gem install bundler -v 2.4.22
           - bundle install --path vendor/bundle
           - sudo gem install cocoapods
@@ -54,21 +50,4 @@ blocks:
             - bundle exec fastlane build_pre_debug
     dependencies: []
     run:
-      when: branch =~ 'fix/pipe-2024'
-promotions:
-  - name: Deploy - TestFlight
-    pipeline_file: testFlight-deploy.yml
-    auto_promote:
-      when: branch = 'master'
-  - name: Deploy - Homolog - Firebase
-    pipeline_file: appDistribution-debug-deploy.yml
-    auto_promote:
-      when: branch =~ 'fix/pipe-2024'
-  - name: Deploy Dsym File
-    pipeline_file: testFlight-deploy-dsym.yml
-  - name: Deploy - Homolog - TestFlight
-    pipeline_file: appDistribution-prod-debug-deploy.yml
-  - name: Update - Certificate - Homolog
-    pipeline_file: update-cert-homolog.yml
-  - name: Update - Certificate - Production
-    pipeline_file: update-cert-prod.yml
+      when: branch =~ 'develop'
