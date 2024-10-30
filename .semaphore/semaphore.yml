@@ -22,7 +22,7 @@ blocks:
           - brew install rbenv
           - rbenv install 2.7.6
           - rbenv global 2.7.6
-          - gem install bundler
+          - gem install bundler -v 2.4.22
           - bundle install --path vendor/bundle
           - sudo gem install cocoapods
           - pod install
