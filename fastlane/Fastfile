@@ -23,5 +23,16 @@ platform :ios do
 end
 
 lane :setup_certificates do
-  match(type: "appstore", git_url: "https://github.com/juniorfernandesdev/certificados.git")
+  match(
+    type: "appstore",
+    git_url: "git@github.com:juniorfernandesdev/certificados.git"
+  )
+end
+
+lane :create_and_upload_certificates do
+  match(
+    type: "appstore", # ou "development", dependendo do que você precisa
+    git_url: "git@github.com:juniorfernandesdev/certificados.git",
+    clone_branch_directly: true # se você tiver muitos branches e quiser otimizar
+  )
 end
